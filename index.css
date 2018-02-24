@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-image: url("https://www.ladycarnarvon.com/wp-content/uploads/2014/01/USA.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  margin: 0;
+}
+
+/* Header  */
+header {
+  background-color: #B34538;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fde3a7;
+}
+
+h1 {
+  font-family: 'Tangerine', cursive, serif;
+  font-size: 40px;
+  padding-top: 10px;
+  font-weight: 700;
+}
+
+.stats {
+  width: 100%;
+  text-align: center;
+}
+
+header p {
+  font-size: 24px;
+  display: inline-block;
+  width: 49%;
+  padding: 5px;
+}
+
+/* Main Section */
+main {
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.answer-option {
+  display: block;
+  padding: 10px;
+}
+
+button {
+  margin: 10px 0;
+}
+
+section {
+  border: 1px solid gray;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.quiz-question {
+  text-align: left;
+}
+
+img {
+  display: block;
+  width: 50%;
+  margin: auto;
+}
+
