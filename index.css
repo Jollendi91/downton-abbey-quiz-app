@@ -48,6 +48,44 @@ main {
   justify-content: center;
 }
 
+.main-screen {
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  margin: 10px 0;
+  background-color: rgba(255, 255, 255, .70);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 1.25;
+}
+
+.begin-quiz {
+  font-size: 18px;
+  color: white;
+  padding: 10px 15px;
+  margin-top: 30px;
+  background-color: #607118;
+  border: 0;
+  cursor: pointer;
+}
+
+.begin-quiz:hover {
+  background-color: #3D480E;
+}
+
+/* Form Section */
+
+legend {
+  display: none;
+}
+
 .answer-option {
   display: block;
   padding: 10px;
@@ -55,13 +93,6 @@ main {
 
 button {
   margin: 10px 0;
-}
-
-section {
-  border: 1px solid gray;
-  text-align: center;
-  margin: 10px 0;
-  background-color: white;
 }
 
 .quiz-question {
