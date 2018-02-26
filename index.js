@@ -12,19 +12,19 @@ function generateCurrentQuestion(questionList, questionNumber) {
 	        <legend>Question ${questionNumber + 1}</legend>
 	        <h3>${currentQuestion.question}</h3>
 	        <label class="answer-option option-1">
-	          <input type="radio" name="answer" value="${currentQuestion.answers[0]}" required>
+	          <input type="radio" name="answer" value="0" required>
 	          <span>${currentQuestion.answers[0]}</span>
 	        </label>
 	        <label class="answer-option option-2">
-	          <input type="radio" name="answer" value="${currentQuestion.answers[1]}" required>
+	          <input type="radio" name="answer" value="1" required>
 	          <span>${currentQuestion.answers[1]}</span>
 	        </label>
 	        <label class="answer-option option-3">
-	          <input type="radio" name="answer" value="${currentQuestion.answers[2]}" required>
+	          <input type="radio" name="answer" value="2" required>
 	          <span>${currentQuestion.answers[2]}</span>
 	        </label>
 	        <label class="answer-option option-4">
-	          <input type="radio" name="answer" value="${currentQuestion.answers[3]}" required>
+	          <input type="radio" name="answer" value="3" required>
 	          <span>${currentQuestion.answers[3]}</span>
 	        </label>
 	        <button class="js-submit-question" type="submit" name="submit answer" role="button" value="Submit Answer">Submit Answer</button>
@@ -78,7 +78,7 @@ function getSelectedAnswer() {
 function evaluateUserAnswer() {
 	const userAnswer = getSelectedAnswer();
 
-	if(userAnswer === STORE[questionNumber].correctAnswer) {
+	if(userAnswer == STORE[questionNumber].correctAnswerId) {
 		addToCurrentScore();
 		return generateAnswerCorrectFeedback();
 	} else {
@@ -103,10 +103,12 @@ function generateAnswerCorrectFeedback() {
 }
 
 function generateAnswerIncorrectFeedback() {
+	const correctAnswer = STORE[questionNumber].correctAnswerId;
+
 	return `
 	<h3>Nope, not quite!</h3>
     <img src="${STORE[questionNumber].incorrectImg}" alt="${STORE[questionNumber].incorrectImgAlt}">
-    <p>The correct answer was: ${STORE[questionNumber].correctAnswer}</p>
+    <p>The correct answer was: ${STORE[questionNumber].answers[correctAnswer]}</p>
     <button class="js-next-question" type="submit" name="${questionNumber === 9 ? "get results" : "next question"}" role="button" value="${questionNumber === 9 ? "get results" : "next question"}">${questionNumber === 9 ? "Get Results" : "Next Question"}</button>`
 }
 
