@@ -10,6 +10,8 @@ body {
   margin: 0;
 }
 
+
+
 /* Header  */
 header {
   background-color: #B34538;
@@ -59,6 +61,7 @@ section {
   border: 1px solid gray;
   text-align: center;
   margin: 10px 0;
+  background-color: white;
 }
 
 .quiz-question {
@@ -70,4 +73,3 @@ img {
   width: 50%;
   margin: auto;
 }
-

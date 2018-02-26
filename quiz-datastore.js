@@ -42,14 +42,14 @@ const STORE = [
 		incorrectImgAlt: "A photo of Matthew and Mary",
 		},
 	{
-		question: 1,
+		question: "Who does the former chauffer, Tom Branson, marry?",
 		answers: [
 			"Lady Edith",
 			"Lady Sybil",
 			"Lady Mary",
 			"Anna"
 			],
-		correctAnswerId: "Lady Sybil",
+		correctAnswerId: 1,
 		correctImg: "http://www4.pictures.zimbio.com/mp/vE1EvbvjtVql.jpg",
 		correctImgAlt: "A photo of Lady Sybil and her husband Tom Branson",
 		incorrectImg: "http://i.telegraph.co.uk/multimedia/archive/03461/Downton_Branson_3461361k.jpg",

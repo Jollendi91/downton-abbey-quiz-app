@@ -94,12 +94,16 @@ function submitQuizAnswer() {
 	});
 }
 
+function checkForLastQuestion() {
+	return (questionNumber === 9) ? "Get Results" : "Next Question";
+}
+
 function generateAnswerCorrectFeedback() {
 	return `
 	<h3>You got it!</h3>
     <img src="${STORE[questionNumber].correctImg}" alt="${STORE[questionNumber].correctImgAlt}">
     <p>Keep up the good work!</p>
-    <button class="js-next-question" type="submit" name="${questionNumber === 9 ? "get results" : "next question"}" role="button" value="${questionNumber === 9 ? "get results" : "next question"}">${questionNumber === 9 ? "Get Results" : "Next Question"}</button>`
+    <button class="js-next-question" type="submit" name="${checkForLastQuestion()}" role="button" value="${checkForLastQuestion()}">${checkForLastQuestion()}</button>`
 }
 
 function generateAnswerIncorrectFeedback() {
