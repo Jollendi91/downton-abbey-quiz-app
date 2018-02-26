@@ -5,6 +5,7 @@ let quizScore = 0;
 
 function generateCurrentQuestion(questionList, questionNumber) {
 	const currentQuestion = questionList[questionNumber];
+	const questionAnswers = currentQuestion.answers;
 
 	return `
 	<form class="question-answer-form js-question-answer-form">
@@ -12,20 +13,20 @@ function generateCurrentQuestion(questionList, questionNumber) {
 	        <legend>Question ${questionNumber + 1}</legend>
 	        <h3>${currentQuestion.question}</h3>
 	        <label class="answer-option option-1">
-	          <input type="radio" name="answer" value="${currentQuestion.answers[0]}" required>
-	          <span>${currentQuestion.answers[0]}</span>
+	          <input type="radio" name="answer" value="${questionAnswers[0]}" required>
+	          <span>${questionAnswers[0]}</span>
 	        </label>
 	        <label class="answer-option option-2">
-	          <input type="radio" name="answer" value="${currentQuestion.answers[1]}" required>
-	          <span>${currentQuestion.answers[1]}</span>
+	          <input type="radio" name="answer" value="${questionAnswers[1]}" required>
+	          <span>${questionAnswers[1]}</span>
 	        </label>
 	        <label class="answer-option option-3">
-	          <input type="radio" name="answer" value="${currentQuestion.answers[2]}" required>
-	          <span>${currentQuestion.answers[2]}</span>
+	          <input type="radio" name="answer" value="${questionAnswers[2]}" required>
+	          <span>${questionAnswers[2]}</span>
 	        </label>
 	        <label class="answer-option option-4">
-	          <input type="radio" name="answer" value="${currentQuestion.answers[3]}" required>
-	          <span>${currentQuestion.answers[3]}</span>
+	          <input type="radio" name="answer" value="${questionAnswers[3]}" required>
+	          <span>${questionAnswers[3]}</span>
 	        </label>
 	        <button class="js-submit-question" type="submit" name="submit answer" role="button" value="Submit Answer">Submit Answer</button>
 	    </fieldset>
