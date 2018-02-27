@@ -100,9 +100,9 @@ function checkForLastQuestion() {
 
 function generateAnswerCorrectFeedback() {
 	return `
-	<h3>You got it!</h3>
+	<h3 class="answer-feedback">You got it!</h3>
     <img src="${STORE[questionNumber].correctImg}" alt="${STORE[questionNumber].correctImgAlt}">
-    <p>Keep up the good work!</p>
+    <p class="feedback-phrase">Keep up the good work!</p>
     <button class="js-next-question" type="submit" name="${checkForLastQuestion()}" role="button" value="${checkForLastQuestion()}">${checkForLastQuestion()}</button>`
 }
 
@@ -110,9 +110,9 @@ function generateAnswerIncorrectFeedback() {
 	const correctAnswer = STORE[questionNumber].correctAnswerId;
 
 	return `
-	<h3>Nope, not quite!</h3>
+	<h3 class="answer-feedback">Nope, not quite!</h3>
     <img src="${STORE[questionNumber].incorrectImg}" alt="${STORE[questionNumber].incorrectImgAlt}">
-    <p>The correct answer was: ${STORE[questionNumber].answers[correctAnswer]}</p>
+    <p class="feedback-phrase">The correct answer was: ${STORE[questionNumber].answers[correctAnswer]}</p>
     <button class="js-next-question" type="submit" name="${questionNumber === 9 ? "get results" : "next question"}" role="button" value="${questionNumber === 9 ? "get results" : "next question"}">${questionNumber === 9 ? "Get Results" : "Next Question"}</button>`
 }
 
@@ -147,19 +147,22 @@ function generateGradePhrase() {
 		return "Have you watched the show? Better luck next time.";
 	} 
 	else if (quizScore >= 4 && quizScore <= 6 ) {
+		return "Good, but not great. Definitely room for improvement!";
+	}
+	else if(quizScore >= 7 && quizScore < 10) {
 		return "Not too shabby. A quick Downton binge and you'll be all set!";
 	}
-	else if(quizScore >= 7) {
-		return "Way to go! You are clearly a true Downton Abbey fan!";
+	else if(quizScore == 10) {
+		return "How splendid, you got them all right! You are a true Downton Abbey fan!"
 	}
 }
 
 function generateQuizResultsElement() {
 	return `
-	<h3>Have some tea and take a break!</h3>
+	<h3 class="quiz-result-title">Have some tea and take a break!</h3>
     <img src="https://tribzap2it.files.wordpress.com/2015/08/downton-abbey-season-6-cast-photo.jpg?w=900" alt="Downton Abbey Season 6 Family Portrait">
-    <p>You scored ${quizScore}/10</p>
-    <p>${generateGradePhrase()}</p>
+    <p class="final-score">You scored ${quizScore}/10</p>
+    <p class="result-phrase">${generateGradePhrase()}</p>
     <button class="js-restart-quiz" type="submit" name="restart quiz" role="button" value="Restart Quiz">Restart Quiz</button>`
 }
 
