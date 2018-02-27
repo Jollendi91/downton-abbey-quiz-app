@@ -10,7 +10,7 @@ function generateCurrentQuestion(questionList, questionNumber) {
 	<form class="question-answer-form js-question-answer-form">
 		<fieldset>
 	        <legend>Question ${questionNumber + 1}</legend>
-	        <h3>${currentQuestion.question}</h3>
+	        <h3 class="question">${currentQuestion.question}</h3>
 	        <label class="answer-option option-1">
 	          <input type="radio" name="answer" value="0" required>
 	          <span>${currentQuestion.answers[0]}</span>

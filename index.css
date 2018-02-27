@@ -64,13 +64,14 @@ main {
 h2 {
   font-size: 30px;
   line-height: 1.25;
+  margin-top: 15px;
 }
 
 .begin-quiz {
   font-size: 18px;
   color: white;
   padding: 10px 15px;
-  margin-top: 30px;
+  margin: 30px;
   background-color: #607118;
   border: 0;
   cursor: pointer;
@@ -82,25 +83,45 @@ h2 {
 
 /* Form Section */
 
+.question-answer-form {
+    padding: 15px 10px;
+}
+
 legend {
   display: none;
 }
 
+h3 {
+    font-size: 22px;
+    line-height: 1.25;
+}
+
 .answer-option {
-  display: block;
+  text-align: left;
   padding: 10px;
+  margin: 10px 0;
+  display: block;
+  background: linear-gradient(135deg, rgba(151,166,56,1) 12%,rgba(135,178,163,0) 68%,rgba(125,185,232,0) 100%);
+  border-radius: 30px;
 }
 
 button {
+  font-size: 18px;
+  color: #fde3a7;
   margin: 10px 0;
+  padding: 5px 10px;
+  background-color: #B34538;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
-.quiz-question {
-  text-align: left;
+button:hover {
+    background-color: #843329;
 }
 
 img {
   display: block;
-  width: 50%;
-  margin: auto;
+  width: 100%;
+  padding: 10px;
 }
