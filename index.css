@@ -139,6 +139,44 @@ button:hover {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   padding: 0 10px;
+}
+
+
+/* Media Queries */
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+
+  .main-screen {
+    max-height: 75%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .question-answer-form {
+    width: 80%;
+  }
+
+  .answer-option {
+    padding: 1px;
+  }
+
+  img {
+    max-height: 8em;
+  }
+
+  h3, .feedback-phrase {
+    flex-basis: 22%;
+  }
+
+  .result-phrase {
+    margin: 7px;
+    flex-basis: 100%;
+  }
 }
