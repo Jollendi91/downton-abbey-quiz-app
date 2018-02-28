@@ -3,7 +3,12 @@
 }
 body {
   height: 100vh;
-  background-image: url("https://www.ladycarnarvon.com/wp-content/uploads/2014/01/USA.jpg");
+  background-image: 
+      linear-gradient(
+        rgba(0, 0, 0, .20),
+        rgba(0, 0, 0, .20)
+        ),
+      url("https://www.ladycarnarvon.com/wp-content/uploads/2014/01/USA.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right;
@@ -139,7 +144,7 @@ button:hover {
 
 img {
   display: block;
-  max-width: 100%;
+  max-width: 65%;
   padding: 0 10px;
 }
 
@@ -147,18 +152,7 @@ img {
 /* Media Queries */
 
 /* Desktops and laptops ----------- */
-@media only screen  and (min-width : 768px) {
-
-  /* Global */
-
-  body {
-    background-image: 
-      linear-gradient(
-        rgba(0, 0, 0, .20),
-        rgba(0, 0, 0, .20)
-        ),
-      url("https://www.ladycarnarvon.com/wp-content/uploads/2014/01/USA.jpg");
-  }
+@media only screen  and (min-width : 550px) {
 
   /* Header */
 
@@ -173,7 +167,7 @@ img {
   .main-screen {
     width: 60%;
     min-width: 540px;
-    max-width: 700px;
+    max-width: 625px;
     min-height: 400px;
     padding: 10px;
     border-radius: 5px;
@@ -202,7 +196,8 @@ img {
   }
 
   .feedback-img, .result-img {
-    width: 70%;
+    max-width: 70%;
+    max-height: ;
   }
 
   h3, .feedback-phrase {
@@ -219,8 +214,29 @@ img {
     font-size: 26px;
   }
 }
+@media only screen  and (max-height: 580px) {
 
-/* Landscape */
+  body {
+    background-image: 
+      linear-gradient(
+        rgba(255, 255, 255, .70),
+        rgba(255, 255, 255, .70)
+        ),
+      url("https://www.ladycarnarvon.com/wp-content/uploads/2014/01/USA.jpg");
+  }
+
+  .main-screen {
+    background-color: initial;
+  }
+
+  img {
+    max-height: 200px;
+  }
+
+}
+
+/* Mobile Landscape */
+
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 776px) 
