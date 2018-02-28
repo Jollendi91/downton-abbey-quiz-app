@@ -101,7 +101,7 @@ function checkForLastQuestion() {
 function generateAnswerCorrectFeedback() {
 	return `
 	<h3 class="answer-feedback">You got it!</h3>
-    <img src="${STORE[questionNumber].correctImg}" alt="${STORE[questionNumber].correctImgAlt}">
+    <img class="feedback-img" src="${STORE[questionNumber].correctImg}" alt="${STORE[questionNumber].correctImgAlt}">
     <p class="feedback-phrase">Keep up the good work!</p>
     <button class="js-next-question" type="submit" name="${checkForLastQuestion()}" role="button" value="${checkForLastQuestion()}">${checkForLastQuestion()}</button>`
 }
@@ -111,9 +111,9 @@ function generateAnswerIncorrectFeedback() {
 
 	return `
 	<h3 class="answer-feedback">Nope, not quite!</h3>
-    <img src="${STORE[questionNumber].incorrectImg}" alt="${STORE[questionNumber].incorrectImgAlt}">
+    <img class="feedback-img" src="${STORE[questionNumber].incorrectImg}" alt="${STORE[questionNumber].incorrectImgAlt}">
     <p class="feedback-phrase">The correct answer was: ${STORE[questionNumber].answers[correctAnswer]}</p>
-    <button class="js-next-question" type="submit" name="${questionNumber === 9 ? "get results" : "next question"}" role="button" value="${questionNumber === 9 ? "get results" : "next question"}">${questionNumber === 9 ? "Get Results" : "Next Question"}</button>`
+    <button class="js-next-question" type="submit" name="${checkForLastQuestion()}" role="button" value="${checkForLastQuestion()}">${checkForLastQuestion()}</button>`
 }
 
 function renderAnswerFeedback() {
@@ -160,7 +160,7 @@ function generateGradePhrase() {
 function generateQuizResultsElement() {
 	return `
 	<h3 class="quiz-result-title">Have some tea and take a break!</h3>
-    <img src="https://tribzap2it.files.wordpress.com/2015/08/downton-abbey-season-6-cast-photo.jpg?w=900" alt="Downton Abbey Season 6 Family Portrait">
+    <img class="result-img" src="https://tribzap2it.files.wordpress.com/2015/08/downton-abbey-season-6-cast-photo.jpg?w=900" alt="Downton Abbey Season 6 Family Portrait">
     <p class="final-score">You scored ${quizScore}/10</p>
     <p class="result-phrase">${generateGradePhrase()}</p>
     <button class="js-restart-quiz" type="submit" name="restart quiz" role="button" value="Restart Quiz">Restart Quiz</button>`

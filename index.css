@@ -114,7 +114,7 @@ h3, .feedback-phrase {
 /* Results Module */
 
 .final-score {
-    margin: 20px 0 10px;
+    margin: 15px 0;
     font-size: 24px;
 }
 
@@ -146,21 +146,119 @@ img {
 
 /* Media Queries */
 
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 768px) {
+
+  /* Global */
+
+  body {
+    background-image: 
+      linear-gradient(
+        rgba(0, 0, 0, .20),
+        rgba(0, 0, 0, .20)
+        ),
+      url("https://www.ladycarnarvon.com/wp-content/uploads/2014/01/USA.jpg");
+  }
+
+  /* Header */
+
+  h1 {
+    font-size: 55px;
+  }
+
+  header p {
+    font-size: 30px;
+  }
+
+  .main-screen {
+    width: 60%;
+    min-width: 540px;
+    max-width: 700px;
+    min-height: 400px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+
+  /* Intro */
+
+  .begin-quiz {
+    margin: 24px;
+    font-size: 24px;
+  }
+
+  /* Question */
+
+  .question-answer-form {
+    width: 75%;
+    margin: auto;
+  }
+
+  .answer-option {
+    font-size: 20px;
+  }
+
+  .feedback-img, .result-img {
+    width: 70%;
+  }
+
+  h3, .feedback-phrase {
+    font-size: 29px;
+    margin: 10px 0;
+  }
+
+  button {
+    font-size: 24px;
+  }
+
+  /* Result */
+  .result-phrase {
+    font-size: 26px;
+  }
+}
+
 /* Landscape */
 @media only screen 
   and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
+  and (max-device-width: 776px) 
+  and (-webkit-device-pixel-ratio: 2)
   and (orientation: landscape) { 
 
-  .main-screen {
-    max-height: 75%;
-    flex-direction: row;
-    flex-wrap: wrap;
+  main {
+    height: 76%;
   }
 
+  body {
+    background-image: 
+      linear-gradient(
+        rgba(255, 255, 255, .70),
+        rgba(255, 255, 255, .70)
+        ),
+      url("https://www.ladycarnarvon.com/wp-content/uploads/2014/01/USA.jpg");
+  }
+
+  /* Global */
+  .main-screen {
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: initial;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  button {
+    margin: 15px 0 0 0;
+  }
+
+  /* Question */
+
   .question-answer-form {
-    width: 80%;
+    width: 70%;
   }
 
   .answer-option {
@@ -169,11 +267,75 @@ img {
 
   img {
     max-height: 8em;
+    width: auto;
   }
 
   h3, .feedback-phrase {
     flex-basis: 22%;
   }
+
+  /* Results */
+
+  .result-phrase {
+    margin: 7px;
+    flex-basis: 100%;
+  }
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 776px) 
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+  main {
+    height: 76%;
+  }
+
+  body {
+    background-image: 
+      linear-gradient(
+        rgba(255, 255, 255, .70),
+        rgba(255, 255, 255, .70)
+        ),
+      url("https://www.ladycarnarvon.com/wp-content/uploads/2014/01/USA.jpg");
+  }
+
+  /* Global */
+  .main-screen {
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: initial;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  button {
+    margin: 15px 0 0 0;
+  }
+
+  /* Question page */
+
+  .question-answer-form {
+    width: 70%;
+  }
+
+  .answer-option {
+    padding: 1px;
+  }
+
+  img {
+    max-height: 8em;
+    width: auto;
+  }
+
+  h3, .feedback-phrase {
+    flex-basis: 22%;
+  }
+
+  /* Results page */
 
   .result-phrase {
     margin: 7px;
