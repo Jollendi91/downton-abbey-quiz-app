@@ -33,7 +33,7 @@ const STORE = [
 			"He is killed in the war.",
 			"He marries Lavinia Swire.",
 			"He is killed in a car accident.",
-			"He is permanently paralyzed from the war"
+			"Permanently paralyzed from the war"
 			],
 		correctAnswerId: 2,
 		correctImg: "https://vignette.wikia.nocookie.net/downtonabbey/images/f/fb/Dead_Matthew.jpg/revision/latest?cb=20130825190212",

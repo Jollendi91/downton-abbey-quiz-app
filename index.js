@@ -2,39 +2,37 @@ let questionNumber = 0;
 let quizScore = 0;
 
 
+function generateQuestionAnswers(i) {
+  return `
+  <label class="answer-option option-1">
+      <input type="radio" name="answer" value="${i}" required>
+      <span>${STORE[questionNumber].answers[i]}</span>
+    </label>
+  `
+}
 
 function generateCurrentQuestion(questionList, questionNumber) {
-	const currentQuestion = questionList[questionNumber];
+  const currentQuestion = questionList[questionNumber];
 
-	return `
-	<form class="question-answer-form js-question-answer-form">
-		<fieldset>
-	        <legend>Question ${questionNumber + 1}</legend>
-	        <h3 class="question">${currentQuestion.question}</h3>
-	        <label class="answer-option option-1">
-	          <input type="radio" name="answer" value="0" required>
-	          <span>${currentQuestion.answers[0]}</span>
-	        </label>
-	        <label class="answer-option option-2">
-	          <input type="radio" name="answer" value="1" required>
-	          <span>${currentQuestion.answers[1]}</span>
-	        </label>
-	        <label class="answer-option option-3">
-	          <input type="radio" name="answer" value="2" required>
-	          <span>${currentQuestion.answers[2]}</span>
-	        </label>
-	        <label class="answer-option option-4">
-	          <input type="radio" name="answer" value="3" required>
-	          <span>${currentQuestion.answers[3]}</span>
-	        </label>
-	        <button class="js-submit-question" type="submit" name="submit answer" role="button" value="Submit Answer">Submit Answer</button>
-	    </fieldset>
-	</form>`;
+  return `
+  <form class="question-answer-form js-question-answer-form">
+    <fieldset>
+          <legend>Question ${questionNumber + 1}</legend>
+          <h3 class="question">${currentQuestion.question}</h3>
+          <div class="answer-container">
+        </div>
+          <button class="js-submit-question" type="submit" name="submit answer" role="button" value="Submit Answer">Submit Answer</button>
+      </fieldset>
+  </form>`;
 }
 
 function renderQuizQuestion() {
-	//This function will render the currect question
-	$('.js-main-screen').html(generateCurrentQuestion(STORE, questionNumber));
+  //This function will render the currect question
+  $('.js-main-screen').html(generateCurrentQuestion(STORE, questionNumber));
+
+  for(let i = 0; i < 4; i++) {
+    $('.answer-container').append(generateQuestionAnswers(i));
+  }
 }
 
 function renderQuestionCount() {
@@ -47,7 +45,7 @@ function renderUserScore() {
 	$('.js-current-score').text(quizScore);
 }
 
-function beginQuiz() {
+function listenForBeginQuizClick() {
 	$(".js-main-screen").on('click', '.js-begin-quiz', event => {
 	renderQuizQuestion();
 	renderUserScore();
@@ -63,7 +61,7 @@ function generateIntroduction() {
 
 function renderIntroduction() {
 	$('.js-main-screen').html(generateIntroduction());
-	beginQuiz();
+	listenForBeginQuizClick();
 }
 
 function addToCurrentScore() {
@@ -86,7 +84,7 @@ function evaluateUserAnswer() {
 	}
 }
 
-function submitQuizAnswer() {
+function listenForQuizAnswerSubmit() {
 	//This function will submit the selected user answer
 	$('.js-main-screen').on('submit', event => {
 		event.preventDefault();
@@ -94,6 +92,8 @@ function submitQuizAnswer() {
 	});
 }
 
+/* This function checks if the current question is the last question, 
+if so, it sets the text to "Get Results"*/
 function checkForLastQuestion() {
 	return (questionNumber === 9) ? "Get Results" : "Next Question";
 }
@@ -135,13 +135,16 @@ function checkForNextQuestion() {
 	}
 }
 
-function goToNextQuestion() {
+function listenForNextQuestion() {
 	$(".js-main-screen").on('click', '.js-next-question', function(event) {
 		event.preventDefault();
 		checkForNextQuestion();
 	});
 }
 
+
+/* This function determines which phrase is shown to the user 
+based off of the score they received */
 function generateGradePhrase() {
 	if(quizScore <= 3) {
 		return "Have you watched the show? Better luck next time.";
@@ -169,7 +172,7 @@ function generateQuizResultsElement() {
 function renderQuizResults() {
 	//This function will present the user will provide the quiz results
 		$('.js-main-screen').html(generateQuizResultsElement());
-		restartQuiz();
+		listenForRestartQuizClick();
 }
 
 function resetQuestionCount() {
@@ -183,7 +186,7 @@ function resetScore() {
 }
 
 
-function restartQuiz() {
+function listenForRestartQuizClick() {
 	$('.js-main-screen').on('click', '.js-restart-quiz', function(event) {
 		resetQuestionCount();
 		resetScore();
@@ -195,8 +198,8 @@ function runQuizApp() {
 	//This function will be responsible for starting the quiz
 	//when the user clicks the start
 	renderIntroduction();
-	goToNextQuestion();
-	submitQuizAnswer();
+	listenForNextQuestion();
+	listenForQuizAnswerSubmit();
 }
 
 
