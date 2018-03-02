@@ -154,6 +154,7 @@ button:hover {
 img {
   display: block;
   max-width: 90%;
+  max-height: 312px;
 }
 
 
@@ -222,6 +223,10 @@ img {
     background: rgb(151, 166, 56);
   } 
 
+  .answer-option:hover {
+    background: rgb(166, 183, 59);
+  }
+
   input {
     margin-right: 10px;
   }
@@ -276,10 +281,6 @@ img {
 
   h3 {
     font-size: 26px;
-  }
-
-  img {
-    max-height: 247px;
   }
 
   .result-phrase {
