@@ -1,22 +1,32 @@
+
 * {
   box-sizing: border-box;
 }
+
 body {
   height: 100vh;
-  background-image: url("https://www.ladycarnarvon.com/wp-content/uploads/2014/01/USA.jpg");
+  margin: 0;
+  background-image: 
+      linear-gradient(
+        rgba(0, 0, 0, .20),
+        rgba(0, 0, 0, .20)
+        ),
+      url("https://www.ladycarnarvon.com/wp-content/uploads/2014/01/USA.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right;
-  margin: 0;
 }
 
 /* Header  */
+
 header {
+  color: #fde3a7;
   background-color: #B34538;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #fde3a7;
+  position: absolute;
+  width: 100%;
 }
 
 h1 {
@@ -31,43 +41,250 @@ h1 {
   text-align: center;
 }
 
-header p {
+.stats p {
   font-size: 24px;
   display: inline-block;
   width: 49%;
   padding: 5px;
 }
 
+
 /* Main Section */
+
 main {
-  height: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
-.answer-option {
-  display: block;
+.main-screen {
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .70);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 21px;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 1.25;
+  padding: 10px 5px;
+}
+
+.begin-quiz {
+  font-size: 18px;
+  color: white;
+  padding: 10px 15px;
+  margin: 15px;
+  background-color: #607118;
+  border: 0;
+  cursor: pointer;
+}
+
+.begin-quiz:hover {
+  background-color: #3D480E;
+}
+
+
+/* Question Module */
+
+legend {
+  width: 100%;
+}
+
+h3, legend {
+  line-height: 1.25;
+}
+
+h3, legend, .feedback-phrase {
+  font-size: 22px;
   padding: 10px;
 }
 
-button {
-  margin: 10px 0;
+
+.question-answer-form {
+  padding: 0 5px;
+  width: 100%;
 }
 
-section {
-  border: 1px solid gray;
-  text-align: center;
-  margin: 10px 0;
-}
-
-.quiz-question {
+.answer-option {
+  font-size: 20px;
   text-align: left;
+  padding: 10px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(151,166,56,1) 12%,rgba(135,178,163,0) 68%,rgba(125,185,232,0) 100%);
+  border-radius: 30px;
+  cursor: pointer;
 }
+
+.answer-option:hover {
+  background: linear-gradient(135deg, rgb(166, 183, 59) 12%,rgba(135,178,163,0) 68%,rgba(125,185,232,0) 100%);
+}
+
+input[type=radio]:checked+label {
+  background: linear-gradient(135deg, rgb(128, 141, 44) 12%,rgba(135,178,163,0) 68%,rgba(125,185,232,0) 100%);
+}
+
+button {
+  font-size: 22px;
+  color: #fde3a7;
+  margin: 10px 0;
+  padding: 5px 10px;
+  background-color: #B34538;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+button:hover {
+    background-color: #843329;
+}
+
+
+/* Feedback Module */
 
 img {
   display: block;
-  width: 50%;
-  margin: auto;
+  max-width: 90%;
+  max-height: 312px;
+}
+
+
+/* Results Module */
+
+.final-score {
+    font-size: 26px;
+    padding: 20px 0;
+}
+
+.result-phrase {
+  font-size: 23px;
+  padding-bottom: 5px; 
+}
+
+
+/* Mobile Landscape */
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 776px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+
+    body {
+    background-image: 
+      linear-gradient(
+        rgba(255, 255, 255, .70),
+        rgba(255, 255, 255, .70)
+        ),
+      url("https://www.ladycarnarvon.com/wp-content/uploads/2014/01/USA.jpg");
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  .main-screen {
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: initial;
+    position: relative;
+    top: 42px;
+  }
+
+  h2 { 
+    width: 100%;
+   }
+
+
+  /* Question Module */
+
+  .question-answer-form {
+    width: 70%;
+  }
+
+  .answer-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .answer-option {
+    padding: 6px;
+    width: 47%;
+    margin: 5px;
+    background: rgb(151, 166, 56);
+  } 
+
+  .answer-option:hover {
+    background: rgb(166, 183, 59);
+  }
+
+  input {
+    margin-right: 10px;
+  }
+
+  img {
+    max-width: 50%;
+    max-height: 12em;
+  }
+
+  .answer-feedback,
+  .feedback-phrase {
+    width: 25%;
+  }
+
+   /* Results Module*/
+
+  .quiz-result-title,
+  .final-score {
+    width: 25%;
+  }
+
+  .result-phrase {
+    font-size: 21px;
+    padding-top: 10px;
+    width: 100%;
+  }
+}
+
+/* Screen/Laptop */
+
+@media only screen and (min-width: 760px) {
+
+  .main-screen {
+    max-width: 500px;
+    min-height: 200px;
+    position: relative;
+    top: 42px;
+    border-radius: 3px;
+  }
+
+  .question-answer-form {
+    max-width: 90%;
+  }
+
+  button {
+    margin-bottom: 25px;
+  }
+
+  h3, legend, .feedback-phrase {
+    margin: 10px 0;
+  }
+
+  h3, legend {
+    font-size: 26px;
+  }
+
+  .result-phrase {
+    padding: 5px;
+  }
 }
 
