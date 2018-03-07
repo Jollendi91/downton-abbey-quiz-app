@@ -17,8 +17,7 @@ function generateCurrentQuestion(questionList, questionNumber) {
   return `
   <form class="question-answer-form js-question-answer-form">
     <fieldset>
-          <legend>Question ${questionNumber + 1}</legend>
-          <h3 class="question">${currentQuestion.question}</h3>
+          <legend>${currentQuestion.question}</legend>
           <div class="answer-container">
         </div>
           <button class="js-submit-question" type="submit" name="submit answer" role="button" value="Submit Answer">Submit Answer</button>

@@ -95,14 +95,14 @@ h2 {
 /* Question Module */
 
 legend {
-  display: none;
+  width: 100%;
 }
 
-h3 {
+h3, legend {
   line-height: 1.25;
 }
 
-h3, .feedback-phrase {
+h3, legend, .feedback-phrase {
   font-size: 22px;
   padding: 10px;
 }
@@ -275,11 +275,11 @@ img {
     margin-bottom: 25px;
   }
 
-  h3, .feedback-phrase {
+  h3, legend, .feedback-phrase {
     margin: 10px 0;
   }
 
-  h3 {
+  h3, legend {
     font-size: 26px;
   }
 
