@@ -5,7 +5,7 @@ let quizScore = 0;
 function generateQuestionAnswers(i) {
   return `
   <label class="answer-option option-1">
-      <input type="radio" name="answer" value="${i}" required>
+      <input type="radio" name="answer" value="${i}" required aria-labelledby="question">
       <span>${STORE[questionNumber].answers[i]}</span>
     </label>
   `
@@ -17,8 +17,8 @@ function generateCurrentQuestion(questionList, questionNumber) {
   return `
   <form class="question-answer-form js-question-answer-form">
     <fieldset>
-          <legend>${currentQuestion.question}</legend>
-          <div class="answer-container">
+          <legend id="question">${currentQuestion.question}</legend>
+          <div class="answer-container" role="radiogroup">
         </div>
           <button class="js-submit-question" type="submit" name="submit answer" role="button" value="Submit Answer">Submit Answer</button>
       </fieldset>
